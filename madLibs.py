@@ -2,19 +2,20 @@
 
 import os,re
 
-
-# and prompt user to replace them
-
-#TODO: print out text
-
-
-
 # Ask for file name to read and save result to a new text file
 fileName = input('Please enter the name of the template file you wish to use:  ')
-lib = open('{0}/{1}.txt'.format(os.getcwd(), fileName))
+#/ for OS , \ for windows
+lib = open('{0}\{1}.txt'.format(os.getcwd(), fileName))
 string = lib.read()
 
 #find occurrences
 replace = 0
 madlib = re.compile(r'(NOUN|VERB|ADVERB|ADJECTIVE)')
-matche = madlib.findall(string)
+match = madlib.findall(string)
+
+#for each word found prompt user for a word then replace it in the string
+for word in match:
+    subString = input('Enter a' + word + ': ')
+    string = string.replace(word, subString, 1)
+
+print(string)
