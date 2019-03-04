@@ -1,5 +1,7 @@
 #Mad Libs program that reads in text files and lets the user add their own text anywhere the word ADJECTIVE, NOUN, ADVERB, or VERB appears in the text file
 
+#how to use: create a text file with contents to be madlib in the current working directory then run the code
+
 import os,re
 
 # Ask for file name to read and save result to a new text file
